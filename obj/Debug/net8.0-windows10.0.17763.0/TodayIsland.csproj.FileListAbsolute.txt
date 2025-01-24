@@ -1,0 +1,13 @@
+C:\Users\12194\Desktop\Projects\RiderProjects\TodayIsland\TodayIsland\obj\Debug\net8.0-windows10.0.17763.0\TodayIsland.csproj.AssemblyReference.cache
+C:\Users\12194\Desktop\Projects\RiderProjects\TodayIsland\TodayIsland\obj\Debug\net8.0-windows10.0.17763.0\LunarDate.baml
+C:\Users\12194\Desktop\Projects\RiderProjects\TodayIsland\TodayIsland\obj\Debug\net8.0-windows10.0.17763.0\RiseFallTime.baml
+C:\Users\12194\Desktop\Projects\RiderProjects\TodayIsland\TodayIsland\obj\Debug\net8.0-windows10.0.17763.0\WeekToday.baml
+C:\Users\12194\Desktop\Projects\RiderProjects\TodayIsland\TodayIsland\obj\Debug\net8.0-windows10.0.17763.0\LunarDate.g.cs
+C:\Users\12194\Desktop\Projects\RiderProjects\TodayIsland\TodayIsland\obj\Debug\net8.0-windows10.0.17763.0\RiseFallTime.g.cs
+C:\Users\12194\Desktop\Projects\RiderProjects\TodayIsland\TodayIsland\obj\Debug\net8.0-windows10.0.17763.0\WeekToday.g.cs
+C:\Users\12194\Desktop\Projects\RiderProjects\TodayIsland\TodayIsland\obj\Debug\net8.0-windows10.0.17763.0\TodayIsland_MarkupCompile.cache
+C:\Users\12194\Desktop\Projects\RiderProjects\TodayIsland\TodayIsland\obj\Debug\net8.0-windows10.0.17763.0\TodayIsland.g.resources
+C:\Users\12194\Desktop\Projects\RiderProjects\TodayIsland\TodayIsland\obj\Debug\net8.0-windows10.0.17763.0\TodayIsland.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\12194\Desktop\Projects\RiderProjects\TodayIsland\TodayIsland\obj\Debug\net8.0-windows10.0.17763.0\TodayIsland.AssemblyInfoInputs.cache
+C:\Users\12194\Desktop\Projects\RiderProjects\TodayIsland\TodayIsland\obj\Debug\net8.0-windows10.0.17763.0\TodayIsland.AssemblyInfo.cs
+C:\Users\12194\Desktop\Projects\RiderProjects\TodayIsland\TodayIsland\obj\Debug\net8.0-windows10.0.17763.0\TodayIsland.csproj.CoreCompileInputs.cache
