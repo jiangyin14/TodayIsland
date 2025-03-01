@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using ClassIsland.Core.Abstractions.Controls;
 using ClassIsland.Core.Attributes;
 using MaterialDesignThemes.Wpf;
+
 namespace TodayIsland;
 
 [ComponentInfo(
@@ -31,7 +32,7 @@ public partial class LunarDateControl : ComponentBase
             var lunarDay = chineseCalendar.GetDayOfMonth(today);
             var chineseEra = GetChineseEra(lunarYear);
 
-            var lunarDate = $"农历 {chineseEra}年{lunarMonth}月{lunarDay}日";
+            var lunarDate = $"农历 {chineseEra}年{ConvertToChinese(lunarMonth)}月{ConvertToChinese(lunarDay)}日";
             Dispatcher.Invoke(() => LunarDate.Text = lunarDate);
         });
     }
@@ -45,5 +46,24 @@ public partial class LunarDateControl : ComponentBase
         int branchIndex = (year - 4) % 12;
 
         return $"{heavenlyStems[stemIndex]}{earthlyBranches[branchIndex]}";
+    }
+
+    private string ConvertToChinese(int number)
+    {
+        string[] chineseNumbers = { "零", "一", "二", "三", "四", "五", "六", "七", "八", "九" };
+        if (number <= 10)
+        {
+            return chineseNumbers[number];
+        }
+        else if (number < 20)
+        {
+            return "十" + (number % 10 == 0 ? "" : chineseNumbers[number % 10]);
+        }
+        else
+        {
+            int tens = number / 10;
+            int units = number % 10;
+            return chineseNumbers[tens] + "十" + (units == 0 ? "" : chineseNumbers[units]);
+        }
     }
 }
