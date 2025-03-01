@@ -20,5 +20,6 @@ public partial class RiseFallTimeControl : ComponentBase
 
     private async void LoadRiseFallTimeAsync()
     {
+        
     }
 }
