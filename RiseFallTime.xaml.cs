@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json.Linq;
 using ClassIsland.Core.Abstractions.Controls;
@@ -31,7 +32,7 @@ public partial class RiseFallTimeControl : ComponentBase
             locationId = locationId.Split(':')[1]; // 获取城市 id
 
             var apiKey = "5ab54681917844da8e1fad7ee55f6f84";
-            var url = $"https://devapi.qweather.com/v7/astronomy/sun?key={apiKey}&location={locationId}";
+            var url = $"https://devapi.qweather.com/v7/astronomy/sun?key={apiKey}&location={locationId}&date=20250306";
 
             using (var httpClient = new HttpClient())
             {
@@ -39,6 +40,16 @@ public partial class RiseFallTimeControl : ComponentBase
                 response.EnsureSuccessStatusCode(); // Throws if not 200-299
 
                 var responseBody = await response.Content.ReadAsStringAsync();
+                Console.WriteLine(responseBody);
+
+                // Validate if the response is valid JSON
+                if (!IsValidJson(responseBody))
+                {
+                    Console.WriteLine("Invalid JSON response");
+                    Dispatcher.Invoke(() => RiseFallTime.Text = "加载日出日落时间失败");
+                    return;
+                }
+
                 var json = JObject.Parse(responseBody);
 
                 var sunrise = json["sunrise"].ToString();
@@ -52,13 +63,33 @@ public partial class RiseFallTimeControl : ComponentBase
         {
             // Log the error or display a message to the user
             Console.WriteLine($"Request error: {e.Message}");
-            Dispatcher.Invoke(() => RiseFallTime.Text = "Failed to load rise/fall times.");
+            Dispatcher.Invoke(() => RiseFallTime.Text = "加载日出日落时间失败");
         }
         catch (Exception e)
         {
             // Handle other potential errors
             Console.WriteLine($"Unexpected error: {e.Message}");
-            Dispatcher.Invoke(() => RiseFallTime.Text = "An unexpected error occurred.");
+            Dispatcher.Invoke(() => RiseFallTime.Text = "加载日出日落时间时发生未知错误");
         }
+    }
+
+    private bool IsValidJson(string strInput)
+    {
+        if (string.IsNullOrWhiteSpace(strInput)) return false;
+        strInput = strInput.Trim();
+        if ((strInput.StartsWith("{") && strInput.EndsWith("}")) || // For object
+            (strInput.StartsWith("[") && strInput.EndsWith("]")))   // For array
+        {
+            try
+            {
+                var obj = JToken.Parse(strInput);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+        return false;
     }
 }
