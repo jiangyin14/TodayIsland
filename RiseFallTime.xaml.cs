@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.IO.Compression;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,25 +26,31 @@ public partial class RiseFallTimeControl : ComponentBase
         LoadRiseFallTimeAsync();
     }
 
-    private async void LoadRiseFallTimeAsync()
+private async void LoadRiseFallTimeAsync()
+{
+    try
     {
-        try
+        // 获取城市 id
+        var locationId = (string)((dynamic)AppBase.Current).Settings.CityId;
+        locationId = locationId.Split(':')[1]; // 获取城市 id
+
+        var apiKey = "5ab54681917844da8e1fad7ee55f6f84";
+        var today = DateTime.Now.ToString("yyyyMMdd");
+        var url = $"https://devapi.qweather.com/v7/astronomy/sun?key={apiKey}&location={locationId}&date={today}";
+
+        using (var httpClient = new HttpClient())
         {
-            var locationId = (string)((dynamic)AppBase.Current).Settings.CityId;
-            locationId = locationId.Split(':')[1]; // 获取城市 id
+            Console.WriteLine(url);
+            var response = await httpClient.GetAsync(url);
+            response.EnsureSuccessStatusCode();
 
-            var apiKey = "5ab54681917844da8e1fad7ee55f6f84";
-            var url = $"https://devapi.qweather.com/v7/astronomy/sun?key={apiKey}&location={locationId}&date=20250306";
-
-            using (var httpClient = new HttpClient())
+            using (var responseStream = await response.Content.ReadAsStreamAsync())
+            using (var deflateStream = new GZipStream(responseStream, CompressionMode.Decompress))
+            using (var streamReader = new StreamReader(deflateStream))
             {
-                var response = await httpClient.GetAsync(url);
-                response.EnsureSuccessStatusCode(); // Throws if not 200-299
-
-                var responseBody = await response.Content.ReadAsStringAsync();
+                var responseBody = streamReader.ReadToEnd();
                 Console.WriteLine(responseBody);
 
-                // Validate if the response is valid JSON
                 if (!IsValidJson(responseBody))
                 {
                     Console.WriteLine("Invalid JSON response");
@@ -55,23 +63,35 @@ public partial class RiseFallTimeControl : ComponentBase
                 var sunrise = json["sunrise"].ToString();
                 var sunset = json["sunset"].ToString();
 
-                var riseFallTime = $"日出: {sunrise}, 日落: {sunset}";
+                var formattedSunrise = FormatTime(sunrise);
+                var formattedSunset = FormatTime(sunset);
+
+                var riseFallTime = $"日出: {formattedSunrise}, 日落: {formattedSunset}";
                 Dispatcher.Invoke(() => RiseFallTime.Text = riseFallTime);
             }
         }
-        catch (HttpRequestException e)
-        {
-            // Log the error or display a message to the user
-            Console.WriteLine($"Request error: {e.Message}");
-            Dispatcher.Invoke(() => RiseFallTime.Text = "加载日出日落时间失败");
-        }
-        catch (Exception e)
-        {
-            // Handle other potential errors
-            Console.WriteLine($"Unexpected error: {e.Message}");
-            Dispatcher.Invoke(() => RiseFallTime.Text = "加载日出日落时间时发生未知错误");
-        }
     }
+    catch (HttpRequestException e)
+    {
+        // Log the error or display a message to the user
+        Console.WriteLine($"Request error: {e.Message}");
+        Dispatcher.Invoke(() => RiseFallTime.Text = "加载日出日落时间失败");
+    }
+    catch (Exception e)
+    {
+        // Handle other potential errors
+        Console.WriteLine($"Unexpected error: {e.Message}");
+        Dispatcher.Invoke(() => RiseFallTime.Text = "加载日出日落时间时发生未知错误");
+    }
+}
+
+private string FormatTime(string timeStr)
+{
+    var dateTime = DateTime.Parse(timeStr);
+    var period = dateTime.Hour < 12 ? "早上" : "晚上";
+    var formattedTime = dateTime.ToString("HH:mm");
+    return $"{period} {formattedTime}";
+}
 
     private bool IsValidJson(string strInput)
     {
