@@ -14,20 +14,20 @@ using ClassIsland.Core;
 namespace TodayIsland;
 
 [ComponentInfo(
-    "9F9D430D-CD37-1AF3-DBD3-0AB7E917FEC3",
-    "下个节假日",
+    "9DAA84F5-3957-0610-8E7C-4E6EEFAD7FDD",
+    "下个节假日（简洁）",
     PackIconKind.CalendarOutline,
     "在主界面显示距离下一个节假日的天数。"
 )]
-public partial class NextHolidayDateControl : ComponentBase
+public partial class NextHolidayDateEasierControl : ComponentBase
 {
-    public NextHolidayDateControl()
+    public NextHolidayDateEasierControl()
     {
         InitializeComponent();
-        LoadNextHolidayAsync();
+        LoadNextHolidayEasierAsync();
     }
 
-private async void LoadNextHolidayAsync()
+private async void LoadNextHolidayEasierAsync()
 {
     try
     {
@@ -48,20 +48,31 @@ private async void LoadNextHolidayAsync()
                 if (!IsValidJson(responseBody))
                 {
                     Console.WriteLine("Invalid JSON response");
-                    Dispatcher.Invoke(() => NextHolidayDate.Text = "加载节假日信息失败");
+                    Dispatcher.Invoke(() => NextHolidayDateEasier.Text = "加载节假日信息失败");
                     return;
                 }
                 
                 var json = JObject.Parse(responseBody);
                 
-                if (json["message"] != null)
+                if (json["next_holiday"] != null)
                 {
-                    var message = json["message"].ToString();
-                    Dispatcher.Invoke(() => NextHolidayDate.Text = message);
+                    var nextHoliday = json["next_holiday"];
+                    var name = nextHoliday["name"]?.ToString();
+                    var countdown = nextHoliday["countdown"]?.ToString();
+                    
+                    if (!string.IsNullOrEmpty(name) && !string.IsNullOrEmpty(countdown))
+                    {
+                        var formattedText = $"{name} {countdown}天";
+                        Dispatcher.Invoke(() => NextHolidayDateEasier.Text = formattedText);
+                    }
+                    else
+                    {
+                        Dispatcher.Invoke(() => NextHolidayDateEasier.Text = "未找到节假日信息");
+                    }
                 }
                 else
                 {
-                    Dispatcher.Invoke(() => NextHolidayDate.Text = "未找到节假日信息");
+                    Dispatcher.Invoke(() => NextHolidayDateEasier.Text = "未找到节假日信息");
                 }
             }
         }
@@ -69,12 +80,12 @@ private async void LoadNextHolidayAsync()
     catch (HttpRequestException e)
     {
         Console.WriteLine($"Request error: {e.Message}");
-        Dispatcher.Invoke(() => NextHolidayDate.Text = "加载节假日信息失败");
+        Dispatcher.Invoke(() => NextHolidayDateEasier.Text = "加载节假日信息失败");
     }
     catch (Exception e)
     {
         Console.WriteLine($"Unexpected error: {e.Message}");
-        Dispatcher.Invoke(() => NextHolidayDate.Text = "加载节假日信息时发生未知错误");
+        Dispatcher.Invoke(() => NextHolidayDateEasier.Text = "加载节假日信息时发生未知错误");
     }
 }
 

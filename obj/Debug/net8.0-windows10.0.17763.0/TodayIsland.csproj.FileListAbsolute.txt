@@ -31,3 +31,5 @@ C:\Users\12194\Desktop\Projects\RiderProjects\TodayIsland\TodayIsland\obj\Debug\
 C:\Users\12194\Desktop\Projects\RiderProjects\TodayIsland\TodayIsland\obj\Debug\net8.0-windows10.0.17763.0\WeekOddToday.g.cs
 C:\Users\12194\Desktop\Projects\RiderProjects\TodayIsland\TodayIsland\obj\Debug\net8.0-windows10.0.17763.0\NextHolidayDate.baml
 C:\Users\12194\Desktop\Projects\RiderProjects\TodayIsland\TodayIsland\obj\Debug\net8.0-windows10.0.17763.0\NextHolidayDate.g.cs
+C:\Users\12194\Desktop\Projects\RiderProjects\TodayIsland\TodayIsland\obj\Debug\net8.0-windows10.0.17763.0\NextHolidayDateEasier.baml
+C:\Users\12194\Desktop\Projects\RiderProjects\TodayIsland\TodayIsland\obj\Debug\net8.0-windows10.0.17763.0\NextHolidayDateEasier.g.cs
