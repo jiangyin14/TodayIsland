@@ -73,13 +73,11 @@ private async void LoadRiseFallTimeAsync()
     }
     catch (HttpRequestException e)
     {
-        // Log the error or display a message to the user
         Console.WriteLine($"Request error: {e.Message}");
         Dispatcher.Invoke(() => RiseFallTime.Text = "加载日出日落时间失败");
     }
     catch (Exception e)
     {
-        // Handle other potential errors
         Console.WriteLine($"Unexpected error: {e.Message}");
         Dispatcher.Invoke(() => RiseFallTime.Text = "加载日出日落时间时发生未知错误");
     }
