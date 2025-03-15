@@ -17,7 +17,7 @@ namespace TodayIsland;
     "9DAA84F5-3957-0610-8E7C-4E6EEFAD7FDD",
     "下个节假日（简洁）",
     PackIconKind.CalendarOutline,
-    "在主界面显示距离下一个节假日的天数。"
+    "在主界面显示距离下一个节假日的天数（简洁版）。"
 )]
 public partial class NextHolidayDateEasierControl : ComponentBase
 {

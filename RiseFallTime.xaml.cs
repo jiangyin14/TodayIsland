@@ -14,9 +14,9 @@ namespace TodayIsland;
 
 [ComponentInfo(
     "6DD56598-8C6E-C22D-D642-053EC1B0A1F1",
-    "日月起落时间",
+    "日出日落时间",
     PackIconKind.CalendarOutline,
-    "在主界面显示本周在学期中的周数。"
+    "在主界面显示今日的日出日落时间"
 )]
 public partial class RiseFallTimeControl : ComponentBase
 {
