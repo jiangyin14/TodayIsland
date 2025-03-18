@@ -2,9 +2,9 @@
   "profiles": {
     "ClassIsland 插件": {
       "commandName": "Executable",
-      "executablePath": "C:\\Users\\12194\\Desktop\\Projects\\RiderProjects\\ClassIslandOriginal\\ClassIsland\\bin\\Debug\\net8.0-windows\\classisland.exe",
+      "executablePath": "$(ClassIsland_DebugBinaryFile)",
       "commandLineArgs": "-epp $(TargetDir)",
-      "workingDirectory": "C:\\Users\\12194\\Desktop\\Projects\\RiderProjects\\ClassIslandOriginal\\ClassIsland\\bin\\Debug\\net8.0-windows"
+      "workingDirectory": "$(ClassIsland_DebugBinaryDirectory)"
     }
   }
 }
