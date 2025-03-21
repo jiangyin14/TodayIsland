@@ -1,10 +1,10 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\12194\\Desktop\\Projects\\RiderProjects\\TodayIsland\\TodayIsland\\",
+  "WorkspaceRootPath": "D:\\Dev\\CI-plugins\\TodayIsland\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3046E085-27A2-450C-BBC1-2E183D6722EB}|TodayIsland.csproj|c:\\users\\12194\\desktop\\projects\\riderprojects\\todayisland\\todayisland\\todayisland.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
-      "RelativeMoniker": "D:0:0:{3046E085-27A2-450C-BBC1-2E183D6722EB}|TodayIsland.csproj|solutionrelative:todayisland.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Dev\\CI-plugins\\TodayIsland\\TodayIsland.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:TodayIsland.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,14 +19,13 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "TodayIsland",
-              "DocumentMoniker": "C:\\Users\\12194\\Desktop\\Projects\\RiderProjects\\TodayIsland\\TodayIsland\\TodayIsland.csproj",
+              "Title": "TodayIsland.csproj",
+              "DocumentMoniker": "D:\\Dev\\CI-plugins\\TodayIsland\\TodayIsland.csproj",
               "RelativeDocumentMoniker": "TodayIsland.csproj",
-              "ToolTip": "C:\\Users\\12194\\Desktop\\Projects\\RiderProjects\\TodayIsland\\TodayIsland\\TodayIsland.csproj",
+              "ToolTip": "D:\\Dev\\CI-plugins\\TodayIsland\\TodayIsland.csproj",
               "RelativeToolTip": "TodayIsland.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-01-19T05:55:31.305Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-19T05:55:31.305Z"
             }
           ]
         }
