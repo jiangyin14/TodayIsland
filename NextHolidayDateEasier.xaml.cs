@@ -1,7 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.IO.Compression;
-using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json.Linq;
@@ -9,7 +7,7 @@ using ClassIsland.Core.Abstractions.Controls;
 using ClassIsland.Core.Attributes;
 using MaterialDesignThemes.Wpf;
 using ClassIsland.Core;
-
+using System.Windows.Threading;
 
 namespace TodayIsland;
 
@@ -27,39 +25,29 @@ public partial class NextHolidayDateEasierControl : ComponentBase
         LoadNextHolidayEasierAsync();
     }
 
-private async void LoadNextHolidayEasierAsync()
-{
-    try
+    private async void LoadNextHolidayEasierAsync()
     {
-        using (var httpClient = new HttpClient())
+        try
         {
-            var url = "https://api.3r60.top/v1/holiday/json.php";
-            Console.WriteLine(url);
-            
-            var response = await httpClient.GetAsync(url);
-            response.EnsureSuccessStatusCode();
-            
-            using (var responseStream = await response.Content.ReadAsStreamAsync())
-            using (var streamReader = new StreamReader(responseStream))
+            if (File.Exists("nextHolidayConfig.json"))
             {
-                var responseBody = streamReader.ReadToEnd();
-                Console.WriteLine(responseBody);
-                
+                var responseBody = await File.ReadAllTextAsync("nextHolidayConfig.json");
+
                 if (!IsValidJson(responseBody))
                 {
-                    Console.WriteLine("Invalid JSON response");
+                    Console.WriteLine("[TodayIsland][NextHoliday] Invalid JSON response");
                     Dispatcher.Invoke(() => NextHolidayDateEasier.Text = "加载节假日信息失败");
                     return;
                 }
-                
+
                 var json = JObject.Parse(responseBody);
-                
+
                 if (json["next_holiday"] != null)
                 {
                     var nextHoliday = json["next_holiday"];
                     var name = nextHoliday["name"]?.ToString();
                     var countdown = nextHoliday["countdown"]?.ToString();
-                    
+
                     if (!string.IsNullOrEmpty(name) && !string.IsNullOrEmpty(countdown))
                     {
                         var formattedText = $"{name} {countdown}天";
@@ -67,45 +55,43 @@ private async void LoadNextHolidayEasierAsync()
                     }
                     else
                     {
-                        Dispatcher.Invoke(() => NextHolidayDateEasier.Text = "未找到节假日信息");
+                        Dispatcher.Invoke(() => NextHolidayDateEasier.Text = "节假日信息未找到");
                     }
                 }
                 else
                 {
-                    Dispatcher.Invoke(() => NextHolidayDateEasier.Text = "未找到节假日信息");
+                    Dispatcher.Invoke(() => NextHolidayDateEasier.Text = "节假日信息未找到");
                 }
             }
+            else
+            {
+                Dispatcher.Invoke(() => NextHolidayDateEasier.Text = "节假日配置文件未找到");
+            }
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine($"Unexpected error: {e.Message}");
+            Dispatcher.Invoke(() => NextHolidayDateEasier.Text = "加载时发生未知错误");
         }
     }
-    catch (HttpRequestException e)
-    {
-        Console.WriteLine($"Request error: {e.Message}");
-        Dispatcher.Invoke(() => NextHolidayDateEasier.Text = "加载节假日信息失败");
-    }
-    catch (Exception e)
-    {
-        Console.WriteLine($"Unexpected error: {e.Message}");
-        Dispatcher.Invoke(() => NextHolidayDateEasier.Text = "加载节假日信息时发生未知错误");
-    }
-}
 
-private bool IsValidJson(string strInput)
-{
-    if (string.IsNullOrWhiteSpace(strInput)) return false;
-    strInput = strInput.Trim();
-    if ((strInput.StartsWith("{") && strInput.EndsWith("}")) || // For object
-        (strInput.StartsWith("[") && strInput.EndsWith("]")))   // For array
+    private bool IsValidJson(string strInput)
     {
-        try
+        if (string.IsNullOrWhiteSpace(strInput)) return false;
+        strInput = strInput.Trim();
+        if ((strInput.StartsWith("{") && strInput.EndsWith("}")) || // For object
+            (strInput.StartsWith("[") && strInput.EndsWith("]")))   // For array
         {
-            var obj = JToken.Parse(strInput);
-            return true;
+            try
+            {
+                var obj = JToken.Parse(strInput);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
-        catch (Exception)
-        {
-            return false;
-        }
+        return false;
     }
-    return false;
-}
 }
