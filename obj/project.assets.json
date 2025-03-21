@@ -3857,23 +3857,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\12194\\.nuget\\packages\\": {},
+    "C:\\Users\\Xwei\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\12194\\Desktop\\Projects\\RiderProjects\\TodayIsland\\TodayIsland\\TodayIsland.csproj",
+      "projectUniqueName": "D:\\Dev\\CI-plugins\\TodayIsland\\TodayIsland.csproj",
       "projectName": "TodayIsland",
-      "projectPath": "C:\\Users\\12194\\Desktop\\Projects\\RiderProjects\\TodayIsland\\TodayIsland\\TodayIsland.csproj",
-      "packagesPath": "C:\\Users\\12194\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\12194\\Desktop\\Projects\\RiderProjects\\TodayIsland\\TodayIsland\\obj\\",
+      "projectPath": "D:\\Dev\\CI-plugins\\TodayIsland\\TodayIsland.csproj",
+      "packagesPath": "C:\\Users\\Xwei\\.nuget\\packages\\",
+      "outputPath": "D:\\Dev\\CI-plugins\\TodayIsland\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\12194\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Xwei\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -3882,7 +3882,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -3901,7 +3900,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.100"
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
       "net8.0-windows10.0.17763": {
@@ -3927,7 +3926,7 @@
         "downloadDependencies": [
           {
             "name": "Microsoft.Windows.SDK.NET.Ref",
-            "version": "[10.0.17763.54, 10.0.17763.54]"
+            "version": "[10.0.17763.57, 10.0.17763.57]"
           }
         ],
         "frameworkReferences": {
@@ -3941,7 +3940,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
       }
     }
   },
@@ -3950,7 +3949,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'unvell.ReoGridWPF.dll 2.2.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0-windows10.0.17763'. This package may not be fully compatible with your project.",
+      "message": "已使用“.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1”而不是项目目标框架“net8.0-windows10.0.17763”还原包“unvell.ReoGridWPF.dll 2.2.0”。此包可能与项目不完全兼容。",
       "libraryId": "unvell.ReoGridWPF.dll",
       "targetGraphs": [
         "net8.0-windows10.0.17763"

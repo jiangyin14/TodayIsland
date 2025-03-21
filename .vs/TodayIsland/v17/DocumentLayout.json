@@ -1,10 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\12194\\Desktop\\Projects\\RiderProjects\\TodayIsland\\TodayIsland\\",
+  "WorkspaceRootPath": "D:\\Dev\\CI-plugins\\TodayIsland\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3046E085-27A2-450C-BBC1-2E183D6722EB}|TodayIsland.csproj|c:\\users\\12194\\desktop\\projects\\riderprojects\\todayisland\\todayisland\\todayisland.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "AbsoluteMoniker": "D:0:0:{3046E085-27A2-450C-BBC1-2E183D6722EB}|TodayIsland.csproj|d:\\dev\\ci-plugins\\todayisland\\plugin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3046E085-27A2-450C-BBC1-2E183D6722EB}|TodayIsland.csproj|solutionrelative:plugin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3046E085-27A2-450C-BBC1-2E183D6722EB}|TodayIsland.csproj|d:\\dev\\ci-plugins\\todayisland\\todayisland.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
       "RelativeMoniker": "D:0:0:{3046E085-27A2-450C-BBC1-2E183D6722EB}|TodayIsland.csproj|solutionrelative:todayisland.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3046E085-27A2-450C-BBC1-2E183D6722EB}|TodayIsland.csproj|d:\\dev\\ci-plugins\\todayisland\\nextholidaydateeasier.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3046E085-27A2-450C-BBC1-2E183D6722EB}|TodayIsland.csproj|solutionrelative:nextholidaydateeasier.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3046E085-27A2-450C-BBC1-2E183D6722EB}|TodayIsland.csproj|d:\\dev\\ci-plugins\\todayisland\\nextholidaydate.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3046E085-27A2-450C-BBC1-2E183D6722EB}|TodayIsland.csproj|solutionrelative:nextholidaydate.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,10 +31,49 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Plugin.cs",
+              "DocumentMoniker": "D:\\Dev\\CI-plugins\\TodayIsland\\Plugin.cs",
+              "RelativeDocumentMoniker": "Plugin.cs",
+              "ToolTip": "D:\\Dev\\CI-plugins\\TodayIsland\\Plugin.cs*",
+              "RelativeToolTip": "Plugin.cs*",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAgwDkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T15:35:35.37Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "NextHolidayDate.xaml.cs",
+              "DocumentMoniker": "D:\\Dev\\CI-plugins\\TodayIsland\\NextHolidayDate.xaml.cs",
+              "RelativeDocumentMoniker": "NextHolidayDate.xaml.cs",
+              "ToolTip": "D:\\Dev\\CI-plugins\\TodayIsland\\NextHolidayDate.xaml.cs*",
+              "RelativeToolTip": "NextHolidayDate.xaml.cs*",
+              "ViewState": "AgIAADQAAAAAAAAAAAAowFQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T15:35:14.908Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "NextHolidayDateEasier.xaml.cs",
+              "DocumentMoniker": "D:\\Dev\\CI-plugins\\TodayIsland\\NextHolidayDateEasier.xaml.cs",
+              "RelativeDocumentMoniker": "NextHolidayDateEasier.xaml.cs",
+              "ToolTip": "D:\\Dev\\CI-plugins\\TodayIsland\\NextHolidayDateEasier.xaml.cs*",
+              "RelativeToolTip": "NextHolidayDateEasier.xaml.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T15:34:37.472Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "TodayIsland",
-              "DocumentMoniker": "C:\\Users\\12194\\Desktop\\Projects\\RiderProjects\\TodayIsland\\TodayIsland\\TodayIsland.csproj",
+              "DocumentMoniker": "D:\\Dev\\CI-plugins\\TodayIsland\\TodayIsland.csproj",
               "RelativeDocumentMoniker": "TodayIsland.csproj",
-              "ToolTip": "C:\\Users\\12194\\Desktop\\Projects\\RiderProjects\\TodayIsland\\TodayIsland\\TodayIsland.csproj",
+              "ToolTip": "D:\\Dev\\CI-plugins\\TodayIsland\\TodayIsland.csproj",
               "RelativeToolTip": "TodayIsland.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2025-01-19T05:55:31.305Z",
