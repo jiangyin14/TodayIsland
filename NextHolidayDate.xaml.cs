@@ -33,7 +33,7 @@ private async void LoadNextHolidayAsync()
     {
         using (var httpClient = new HttpClient())
         {
-            var url = "https://api.3r60.top/v1/holiday/json.php";
+            var url = "https://api.smart-teach.cn/holiday.php";
             Console.WriteLine(url);
             
             var response = await httpClient.GetAsync(url);

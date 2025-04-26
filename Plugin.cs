@@ -14,7 +14,7 @@ public class Plugin : PluginBase
         services.AddComponent<WeekNumberTodayControl>();
         services.AddComponent<WeekOddTodayControl>();
         services.AddComponent<LunarDateControl>();
-        services.AddComponent<RiseFallTimeControl>();
+        // services.AddComponent<RiseFallTimeControl>();
         services.AddComponent<NextHolidayDateControl>();
         services.AddComponent<NextHolidayDateEasierControl>();
     }

@@ -21,27 +21,31 @@ public partial class LunarDateControl : ComponentBase
         LoadLunarDateAsync();
     }
 
+    private string ConvertTraditionalDay(int day)
+    {
+        string[] nums = { "零", "一", "二", "三", "四", "五", "六", "七", "八", "九" };
+        if (day <= 10)            return "初" + nums[day];
+        if (day < 20)             return "十" + nums[day % 10];
+        if (day == 20)            return "二十";
+        if (day < 30)             return "廿" + nums[day % 20];
+        return "三十";
+    }
+
     private async void LoadLunarDateAsync()
     {
-        // 异步加载农历日期
         await Task.Run(() =>
         {
-            // 创建农历日历对象
             var chineseCalendar = new ChineseLunisolarCalendar();
-            // 获取当前日期
             var today = DateTime.Now;
-            // 获取农历年份
             var lunarYear = chineseCalendar.GetYear(today);
-            // 获取农历月份
             var lunarMonth = chineseCalendar.GetMonth(today);
-            // 获取农历日期
             var lunarDay = chineseCalendar.GetDayOfMonth(today);
-            // 获取农历纪年
             var chineseEra = GetChineseEra(lunarYear);
 
-            // 将农历日期转换为中文
-            var lunarDate = $"农历 {chineseEra}年{ConvertToChinese(lunarMonth)}月{ConvertToChinese(lunarDay)}日";
-            // 在UI线程中更新农历日期
+            var monthText = ConvertToChinese(lunarMonth); // 保持原有中文月表示
+            var dayText = ConvertTraditionalDay(lunarDay);
+            var lunarDate = $"农历 {chineseEra}年{monthText}月{dayText}";
+
             Dispatcher.Invoke(() => LunarDate.Text = lunarDate);
         });
     }
