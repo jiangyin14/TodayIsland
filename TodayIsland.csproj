@@ -10,7 +10,7 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <ClassIslandPluginSdkVersion>1.5.0.*</ClassIslandPluginSdkVersion>
+        <ClassIslandPluginSdkVersion>1.6.0.5</ClassIslandPluginSdkVersion>
     </PropertyGroup>
 
     <ItemGroup>

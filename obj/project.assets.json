@@ -2,15 +2,15 @@
   "version": 3,
   "targets": {
     "net8.0-windows10.0.17763": {
-      "AvalonEdit/6.0.0": {
+      "AvalonEdit/6.3.0.90": {
         "type": "package",
         "compile": {
-          "lib/netcoreapp3.0/ICSharpCode.AvalonEdit.dll": {
+          "lib/net7.0-windows7.0/ICSharpCode.AvalonEdit.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netcoreapp3.0/_._": {
+          "lib/net7.0-windows7.0/_._": {
             "related": ".xml"
           }
         },
@@ -18,18 +18,16 @@
           "Microsoft.WindowsDesktop.App"
         ]
       },
-      "ClassIsland.Core/1.5.0.4": {
+      "ClassIsland.Core/1.6.0.5": {
         "type": "package",
         "dependencies": {
-          "ClassIsland.Shared": "1.5.0.4",
-          "ClassIsland.Shared.IPC": "1.5.0.4",
+          "ClassIsland.Shared": "1.6.0.5",
+          "ClassIsland.Shared.IPC": "1.6.0.5",
           "H.NotifyIcon.Wpf": "2.0.131",
           "MaterialDesignThemes": "4.8.0",
           "MaterialDesignThemes.MahApps": "0.2.8",
-          "MdXaml": "1.21.0",
-          "MdXaml.AnimatedGif": "1.21.0",
-          "MdXaml.Html": "1.21.0",
-          "Microsoft.Data.Sqlite": "8.0.0",
+          "MdXaml.AnimatedGif": "1.27.0",
+          "MdXaml.Html": "1.27.0",
           "Microsoft.Extensions.Configuration.UserSecrets": "8.0.0",
           "Microsoft.Extensions.Hosting": "8.0.0",
           "Microsoft.Extensions.Hosting.Abstractions": "8.0.0",
@@ -37,7 +35,7 @@
           "Octokit": "9.1.0",
           "System.Text.Encoding.CodePages": "8.0.0",
           "VirtualizingWrapPanel": "2.0.6",
-          "YamlDotNet": "16.0.0",
+          "YamlDotNet": "16.3.0",
           "gong-wpf-dragdrop": "3.2.1",
           "unvell.ReoGridWPF.dll": "2.2.0"
         },
@@ -55,22 +53,26 @@
           "Microsoft.WindowsDesktop.App.WPF"
         ]
       },
-      "ClassIsland.PluginSdk/1.5.0.4": {
+      "ClassIsland.PluginSdk/1.6.0.5": {
         "type": "package",
         "dependencies": {
-          "ClassIsland.Core": "1.5.0.4"
+          "ClassIsland.Core": "1.6.0.5"
         },
         "compile": {
           "lib/net8.0-windows7.0/ClassIsland.PluginSdk.dll": {}
         },
         "runtime": {
           "lib/net8.0-windows7.0/_._": {}
+        },
+        "build": {
+          "build/net8.0/ClassIsland.PluginSdk.targets": {}
         }
       },
-      "ClassIsland.Shared/1.5.0.4": {
+      "ClassIsland.Shared/1.6.0.5": {
         "type": "package",
         "dependencies": {
           "CommunityToolkit.Mvvm": "8.2.1",
+          "CsesSharp": "1.0.0",
           "Google.Protobuf": "3.27.0-rc1",
           "Grpc": "2.46.6",
           "Microsoft.Extensions.Hosting.Abstractions": "8.0.0"
@@ -86,10 +88,10 @@
           }
         }
       },
-      "ClassIsland.Shared.IPC/1.5.0.4": {
+      "ClassIsland.Shared.IPC/1.6.0.5": {
         "type": "package",
         "dependencies": {
-          "ClassIsland.Shared": "1.5.0.4",
+          "ClassIsland.Shared": "1.6.0.5",
           "dotnetCampus.Ipc": "2.0.0-alpha410"
         },
         "compile": {
@@ -138,6 +140,22 @@
         "frameworkReferences": [
           "Microsoft.WindowsDesktop.App.WPF"
         ]
+      },
+      "CsesSharp/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "YamlDotNet": "16.3.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/CsesSharp.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/_._": {
+            "related": ".xml"
+          }
+        }
       },
       "dotnetCampus.Ipc/2.0.0-alpha410": {
         "type": "package",
@@ -365,11 +383,11 @@
           }
         }
       },
-      "MdXaml/1.21.0": {
+      "MdXaml/1.27.0": {
         "type": "package",
         "dependencies": {
-          "AvalonEdit": "6.0.0",
-          "MdXaml.Plugins": "1.21.0"
+          "AvalonEdit": "6.3.0.90",
+          "MdXaml.Plugins": "1.27.0"
         },
         "compile": {
           "lib/net6.0-windows7.0/MdXaml.dll": {}
@@ -381,10 +399,10 @@
           "Microsoft.WindowsDesktop.App.WPF"
         ]
       },
-      "MdXaml.AnimatedGif/1.21.0": {
+      "MdXaml.AnimatedGif/1.27.0": {
         "type": "package",
         "dependencies": {
-          "MdXaml.Plugins": "1.21.0",
+          "MdXaml.Plugins": "1.27.0",
           "WpfAnimatedGif": "2.0.2"
         },
         "compile": {
@@ -397,13 +415,13 @@
           "Microsoft.WindowsDesktop.App.WPF"
         ]
       },
-      "MdXaml.Html/1.21.0": {
+      "MdXaml.Html/1.27.0": {
         "type": "package",
         "dependencies": {
-          "AvalonEdit": "6.0.0",
+          "AvalonEdit": "6.3.0.90",
           "HtmlAgilityPack": "1.11.42",
-          "MdXaml": "1.21.0",
-          "MdXaml.Plugins": "1.21.0"
+          "MdXaml": "1.27.0",
+          "MdXaml.Plugins": "1.27.0"
         },
         "compile": {
           "lib/net6.0-windows7.0/MdXaml.Html.dll": {}
@@ -415,7 +433,7 @@
           "Microsoft.WindowsDesktop.App.WPF"
         ]
       },
-      "MdXaml.Plugins/1.21.0": {
+      "MdXaml.Plugins/1.27.0": {
         "type": "package",
         "compile": {
           "lib/net6.0-windows7.0/MdXaml.Plugins.dll": {}
@@ -434,35 +452,6 @@
         },
         "runtime": {
           "lib/netcoreapp2.0/_._": {}
-        }
-      },
-      "Microsoft.Data.Sqlite/8.0.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Data.Sqlite.Core": "8.0.0",
-          "SQLitePCLRaw.bundle_e_sqlite3": "2.1.6"
-        },
-        "compile": {
-          "lib/netstandard2.0/_._": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/_._": {}
-        }
-      },
-      "Microsoft.Data.Sqlite.Core/8.0.0": {
-        "type": "package",
-        "dependencies": {
-          "SQLitePCLRaw.core": "2.1.6"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Data.Sqlite.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/_._": {
-            "related": ".xml"
-          }
         }
       },
       "Microsoft.Extensions.Configuration/8.0.0": {
@@ -1160,61 +1149,6 @@
           }
         }
       },
-      "SQLitePCLRaw.bundle_e_sqlite3/2.1.6": {
-        "type": "package",
-        "dependencies": {
-          "SQLitePCLRaw.lib.e_sqlite3": "2.1.6",
-          "SQLitePCLRaw.provider.e_sqlite3": "2.1.6"
-        },
-        "compile": {
-          "lib/netstandard2.0/SQLitePCLRaw.batteries_v2.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/_._": {}
-        }
-      },
-      "SQLitePCLRaw.core/2.1.6": {
-        "type": "package",
-        "dependencies": {
-          "System.Memory": "4.5.3"
-        },
-        "compile": {
-          "lib/netstandard2.0/SQLitePCLRaw.core.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/_._": {}
-        }
-      },
-      "SQLitePCLRaw.lib.e_sqlite3/2.1.6": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/_._": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/_._": {}
-        },
-        "build": {
-          "buildTransitive/net8.0/SQLitePCLRaw.lib.e_sqlite3.targets": {}
-        },
-        "runtimeTargets": {
-          "runtimes/osx-x64/native/_._": {
-            "assetType": "native",
-            "rid": "osx-x64"
-          }
-        }
-      },
-      "SQLitePCLRaw.provider.e_sqlite3/2.1.6": {
-        "type": "package",
-        "dependencies": {
-          "SQLitePCLRaw.core": "2.1.6"
-        },
-        "compile": {
-          "lib/net6.0-windows7.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
-        },
-        "runtime": {
-          "lib/net6.0-windows7.0/_._": {}
-        }
-      },
       "System.Diagnostics.DiagnosticSource/8.0.0": {
         "type": "package",
         "compile": {
@@ -1445,7 +1379,7 @@
           "Microsoft.WindowsDesktop.App.WPF"
         ]
       },
-      "YamlDotNet/16.0.0": {
+      "YamlDotNet/16.3.0": {
         "type": "package",
         "compile": {
           "lib/net8.0/YamlDotNet.dll": {
@@ -1461,59 +1395,63 @@
     }
   },
   "libraries": {
-    "AvalonEdit/6.0.0": {
-      "sha512": "QMbyJrlhOuWzLRPqvW724ly9XbSEkp8Xg2mQY7tvsh1se1pDEJnmDjS6c6OuqDe2Q37uCnXwKdV8tJUx2iLUnw==",
+    "AvalonEdit/6.3.0.90": {
+      "sha512": "WVTb5MxwGqKdeasd3nG5udlV4t6OpvkFanziwI133K0/QJ5FvZmfzRQgpAjGTJhQfIA8GP7AzKQ3sTY9JOFk8Q==",
       "type": "package",
-      "path": "avalonedit/6.0.0",
+      "path": "avalonedit/6.3.0.90",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "avalonedit.6.0.0.nupkg.sha512",
+        "PackageReadme.md",
+        "avalonedit.6.3.0.90.nupkg.sha512",
         "avalonedit.nuspec",
-        "lib/net40/ICSharpCode.AvalonEdit.dll",
-        "lib/net40/ICSharpCode.AvalonEdit.xml",
-        "lib/net45/ICSharpCode.AvalonEdit.dll",
-        "lib/net45/ICSharpCode.AvalonEdit.xml",
-        "lib/netcoreapp3.0/ICSharpCode.AvalonEdit.dll",
-        "lib/netcoreapp3.0/ICSharpCode.AvalonEdit.xml"
+        "images/AvalonEditNuGetPackageIcon.png",
+        "lib/net462/ICSharpCode.AvalonEdit.dll",
+        "lib/net462/ICSharpCode.AvalonEdit.xml",
+        "lib/net6.0-windows7.0/ICSharpCode.AvalonEdit.dll",
+        "lib/net6.0-windows7.0/ICSharpCode.AvalonEdit.xml",
+        "lib/net7.0-windows7.0/ICSharpCode.AvalonEdit.dll",
+        "lib/net7.0-windows7.0/ICSharpCode.AvalonEdit.xml"
       ]
     },
-    "ClassIsland.Core/1.5.0.4": {
-      "sha512": "8E1Mj9LA5rjG98kfcwLqRkRCvELPbeLqw1hOBdTtmhuxRIlMJ4tMRhP3dsk1rMHWJN6cZI7iSBW7Gof2hX8APw==",
+    "ClassIsland.Core/1.6.0.5": {
+      "sha512": "VF2I6CkczbkSS5MMAfIeHtdY18+F5D7iIi6jVC3VSiNz22k1um2pYOsx/XYS9jkfa5J2RSIYhU7LSgKE77EjHQ==",
       "type": "package",
-      "path": "classisland.core/1.5.0.4",
+      "path": "classisland.core/1.6.0.5",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "README.md",
-        "classisland.core.1.5.0.4.nupkg.sha512",
+        "classisland.core.1.6.0.5.nupkg.sha512",
         "classisland.core.nuspec",
         "lib/net8.0-windows7.0/ClassIsland.Core.dll",
         "lib/net8.0-windows7.0/ClassIsland.Core.xml"
       ]
     },
-    "ClassIsland.PluginSdk/1.5.0.4": {
-      "sha512": "4uQHYgpcTojnr0fsFcRBVFaPCVsfnq4EOUYjh4Mp1aHaCSnayX7a4ChpGLUSkjYIdO5zf1bSMfnLaoTxMmcDfg==",
+    "ClassIsland.PluginSdk/1.6.0.5": {
+      "sha512": "UhCaJ5ytTjr56tXxAlndJTp1wHtRfKSo/yUZUJHwjpZCZ4bD1re9Aj9Y8ZRuz7lHWWEwAUjZC1a0uteqe0ii2w==",
       "type": "package",
-      "path": "classisland.pluginsdk/1.5.0.4",
+      "path": "classisland.pluginsdk/1.6.0.5",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "README.md",
-        "classisland.pluginsdk.1.5.0.4.nupkg.sha512",
+        "build/net8.0/ClassIsland.PluginSdk.targets",
+        "build/net8.0/generate-md5.ps1",
+        "classisland.pluginsdk.1.6.0.5.nupkg.sha512",
         "classisland.pluginsdk.nuspec",
         "lib/net8.0-windows7.0/ClassIsland.PluginSdk.dll"
       ]
     },
-    "ClassIsland.Shared/1.5.0.4": {
-      "sha512": "Bf9zZtzusV7/olwpkSr2uDU5u4/hb48rN08yx8H9meOalz4KFWExA9AxkJrVnz5dT0kDmQpgxlxunASPd5T1gQ==",
+    "ClassIsland.Shared/1.6.0.5": {
+      "sha512": "cUA1rGiUgeReqr/sxfVJmTMWSd9izYgKfrSsJDihc5Tomp9vgL1gX9fNlevj/DKkpzyV+zy1sWYejgEke5vvVg==",
       "type": "package",
-      "path": "classisland.shared/1.5.0.4",
+      "path": "classisland.shared/1.6.0.5",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "README.md",
-        "classisland.shared.1.5.0.4.nupkg.sha512",
+        "classisland.shared.1.6.0.5.nupkg.sha512",
         "classisland.shared.nuspec",
         "lib/net472/ClassIsland.Shared.dll",
         "lib/net472/ClassIsland.Shared.xml",
@@ -1521,15 +1459,15 @@
         "lib/net8.0/ClassIsland.Shared.xml"
       ]
     },
-    "ClassIsland.Shared.IPC/1.5.0.4": {
-      "sha512": "bO6I0uStFiWGsOTBXlySZqe6Q+q/AdyvV0ImUluiWLb6DHZs+Ab2yd4aLXwxJkb5xtLlIKbJ+OcsPWU0kEQTdw==",
+    "ClassIsland.Shared.IPC/1.6.0.5": {
+      "sha512": "N+xgTIWPJCLpLcKDpXCSZhHVMeBoqw72k0ksNqAT6rQvDBg7vEMAzxwMrGmkzcQnPNrN3IwTzMSRFjpPmiHrQQ==",
       "type": "package",
-      "path": "classisland.shared.ipc/1.5.0.4",
+      "path": "classisland.shared.ipc/1.6.0.5",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "README.md",
-        "classisland.shared.ipc.1.5.0.4.nupkg.sha512",
+        "classisland.shared.ipc.1.6.0.5.nupkg.sha512",
         "classisland.shared.ipc.nuspec",
         "lib/net472/ClassIsland.Shared.IPC.dll",
         "lib/net472/ClassIsland.Shared.IPC.xml",
@@ -1590,6 +1528,20 @@
         "lib/netcoreapp3.1/ControlzEx.pdb",
         "lib/netcoreapp3.1/ControlzEx.xml",
         "logo-mini.png"
+      ]
+    },
+    "CsesSharp/1.0.0": {
+      "sha512": "S8JLMvi9/KFaCiCym2Hhf9T42aVPxmMMFAkVixQ+NygYEmmEl2l9Pd8KG3qGrHTACtTEABiYoO8q8us0c2Ig+g==",
+      "type": "package",
+      "path": "csessharp/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "csessharp.1.0.0.nupkg.sha512",
+        "csessharp.nuspec",
+        "lib/netstandard2.0/CsesSharp.dll",
+        "lib/netstandard2.0/CsesSharp.xml"
       ]
     },
     "dotnetCampus.Ipc/2.0.0-alpha410": {
@@ -1952,62 +1904,66 @@
         "materialdesignthemes.mahapps.nuspec"
       ]
     },
-    "MdXaml/1.21.0": {
-      "sha512": "S1aqVD27rif73/KqG52UGZMUqCcCBvOmno8dgivBQQC8IU9TMRX/fdKdxJvWZqYuDE8QTzdxDy377garPiBs3w==",
+    "MdXaml/1.27.0": {
+      "sha512": "VWhqhCeKVkJe8vkPmXuGZlRX01WDrTugOLeUvJn18jH/8DrGGVBvtgIlJoELHD2f1DiEWqF3lxxjV55vnzE7Tg==",
       "type": "package",
-      "path": "mdxaml/1.21.0",
+      "path": "mdxaml/1.27.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "MdXaml.md",
         "lib/net45/MdXaml.dll",
+        "lib/net462/MdXaml.dll",
         "lib/net6.0-windows7.0/MdXaml.dll",
         "lib/netcoreapp3.0/MdXaml.dll",
-        "mdxaml.1.21.0.nupkg.sha512",
+        "mdxaml.1.27.0.nupkg.sha512",
         "mdxaml.nuspec"
       ]
     },
-    "MdXaml.AnimatedGif/1.21.0": {
-      "sha512": "kpYBu31VnipAVv9zVvP86G5nQtZ8ohBkTFXvlaXhDMQHOdXTX8pKdWm/3Xq7NbjYsxg9PZks50Li87VoWlVAnA==",
+    "MdXaml.AnimatedGif/1.27.0": {
+      "sha512": "Xrr9IgyAfqDbruqCp2Wxzthbc87QMvMR2YXQsGDyacLtowleefP1Jt3cesZCbI44YcZTGjyJNIkvRAyzzlgsOQ==",
       "type": "package",
-      "path": "mdxaml.animatedgif/1.21.0",
+      "path": "mdxaml.animatedgif/1.27.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "MdXaml.AnimatedGif.md",
         "lib/net45/MdXaml.AnimatedGif.dll",
+        "lib/net462/MdXaml.AnimatedGif.dll",
         "lib/net6.0-windows7.0/MdXaml.AnimatedGif.dll",
         "lib/netcoreapp3.0/MdXaml.AnimatedGif.dll",
-        "mdxaml.animatedgif.1.21.0.nupkg.sha512",
+        "mdxaml.animatedgif.1.27.0.nupkg.sha512",
         "mdxaml.animatedgif.nuspec"
       ]
     },
-    "MdXaml.Html/1.21.0": {
-      "sha512": "xM0jhRiiEJMQB33EJ1QQWr0jiSNNKg98cMmrsB2oWRuOhRSlUlOaLC/ET48wQTzzpU5eRgC16V0Ov60AeqllKQ==",
+    "MdXaml.Html/1.27.0": {
+      "sha512": "3AI0g7EwsTuvhhNd9bjb3J7v5aXFk1dLaf1CNbLjkcZs/MwnEUHNgzF+sLQBYYVdG2DqfV1BsuFoPWSG7IdHvg==",
       "type": "package",
-      "path": "mdxaml.html/1.21.0",
+      "path": "mdxaml.html/1.27.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "MdXaml.Html.md",
         "lib/net45/MdXaml.Html.dll",
+        "lib/net462/MdXaml.Html.dll",
         "lib/net6.0-windows7.0/MdXaml.Html.dll",
         "lib/netcoreapp3.0/MdXaml.Html.dll",
-        "mdxaml.html.1.21.0.nupkg.sha512",
+        "mdxaml.html.1.27.0.nupkg.sha512",
         "mdxaml.html.nuspec"
       ]
     },
-    "MdXaml.Plugins/1.21.0": {
-      "sha512": "jP1NEfsFLZPzjmtSsebeNC2hLo01O4fP5q5c+pqEBMxIxIn1gg6FHj2eL47PqxALKtyTbCiNb+Zm6Ra3Um55hA==",
+    "MdXaml.Plugins/1.27.0": {
+      "sha512": "We7LtBdoukRg9mqTfa1f5n8z/GQPMKBRj3URk9DiMuqzIHkW1lTgK5njVPSScxsRt4YzW22423tSnLWNm2MJKg==",
       "type": "package",
-      "path": "mdxaml.plugins/1.21.0",
+      "path": "mdxaml.plugins/1.27.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/net45/MdXaml.Plugins.dll",
+        "lib/net462/MdXaml.Plugins.dll",
         "lib/net6.0-windows7.0/MdXaml.Plugins.dll",
         "lib/netcoreapp3.0/MdXaml.Plugins.dll",
-        "mdxaml.plugins.1.21.0.nupkg.sha512",
+        "mdxaml.plugins.1.27.0.nupkg.sha512",
         "mdxaml.plugins.nuspec"
       ]
     },
@@ -2078,37 +2034,6 @@
         "ref/xamarinwatchos10/_._",
         "useSharedDesignerContext.txt",
         "version.txt"
-      ]
-    },
-    "Microsoft.Data.Sqlite/8.0.0": {
-      "sha512": "H+iC5IvkCCKSNHXzL3JARvDn7VpkvuJM91KVB89sKjeTF/KX/BocNNh93ZJtX5MCQKb/z4yVKgkU2sVIq+xKfg==",
-      "type": "package",
-      "path": "microsoft.data.sqlite/8.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "lib/netstandard2.0/_._",
-        "microsoft.data.sqlite.8.0.0.nupkg.sha512",
-        "microsoft.data.sqlite.nuspec"
-      ]
-    },
-    "Microsoft.Data.Sqlite.Core/8.0.0": {
-      "sha512": "pujbzfszX7jAl7oTbHhqx7pxd9jibeyHHl8zy1gd55XMaKWjDtc5XhhNYwQnrwWYCInNdVoArbaaAvLgW7TwuA==",
-      "type": "package",
-      "path": "microsoft.data.sqlite.core/8.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "lib/net6.0/Microsoft.Data.Sqlite.dll",
-        "lib/net6.0/Microsoft.Data.Sqlite.xml",
-        "lib/net8.0/Microsoft.Data.Sqlite.dll",
-        "lib/net8.0/Microsoft.Data.Sqlite.xml",
-        "lib/netstandard2.0/Microsoft.Data.Sqlite.dll",
-        "lib/netstandard2.0/Microsoft.Data.Sqlite.xml",
-        "microsoft.data.sqlite.core.8.0.0.nupkg.sha512",
-        "microsoft.data.sqlite.core.nuspec"
       ]
     },
     "Microsoft.Extensions.Configuration/8.0.0": {
@@ -3210,95 +3135,6 @@
         "octokit.png"
       ]
     },
-    "SQLitePCLRaw.bundle_e_sqlite3/2.1.6": {
-      "sha512": "BmAf6XWt4TqtowmiWe4/5rRot6GerAeklmOPfviOvwLoF5WwgxcJHAxZtySuyW9r9w+HLILnm8VfJFLCUJYW8A==",
-      "type": "package",
-      "path": "sqlitepclraw.bundle_e_sqlite3/2.1.6",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/monoandroid90/SQLitePCLRaw.batteries_v2.dll",
-        "lib/net461/SQLitePCLRaw.batteries_v2.dll",
-        "lib/net6.0-android31.0/SQLitePCLRaw.batteries_v2.dll",
-        "lib/net6.0-android31.0/SQLitePCLRaw.batteries_v2.xml",
-        "lib/net6.0-ios14.0/SQLitePCLRaw.batteries_v2.dll",
-        "lib/net6.0-ios14.2/SQLitePCLRaw.batteries_v2.dll",
-        "lib/net6.0-tvos10.0/SQLitePCLRaw.batteries_v2.dll",
-        "lib/netstandard2.0/SQLitePCLRaw.batteries_v2.dll",
-        "lib/xamarinios10/SQLitePCLRaw.batteries_v2.dll",
-        "sqlitepclraw.bundle_e_sqlite3.2.1.6.nupkg.sha512",
-        "sqlitepclraw.bundle_e_sqlite3.nuspec"
-      ]
-    },
-    "SQLitePCLRaw.core/2.1.6": {
-      "sha512": "wO6v9GeMx9CUngAet8hbO7xdm+M42p1XeJq47ogyRoYSvNSp0NGLI+MgC0bhrMk9C17MTVFlLiN6ylyExLCc5w==",
-      "type": "package",
-      "path": "sqlitepclraw.core/2.1.6",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/netstandard2.0/SQLitePCLRaw.core.dll",
-        "sqlitepclraw.core.2.1.6.nupkg.sha512",
-        "sqlitepclraw.core.nuspec"
-      ]
-    },
-    "SQLitePCLRaw.lib.e_sqlite3/2.1.6": {
-      "sha512": "2ObJJLkIUIxRpOUlZNGuD4rICpBnrBR5anjyfUFQep4hMOIeqW+XGQYzrNmHSVz5xSWZ3klSbh7sFR6UyDj68Q==",
-      "type": "package",
-      "path": "sqlitepclraw.lib.e_sqlite3/2.1.6",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "buildTransitive/net461/SQLitePCLRaw.lib.e_sqlite3.targets",
-        "buildTransitive/net6.0/SQLitePCLRaw.lib.e_sqlite3.targets",
-        "buildTransitive/net7.0/SQLitePCLRaw.lib.e_sqlite3.targets",
-        "buildTransitive/net8.0/SQLitePCLRaw.lib.e_sqlite3.targets",
-        "lib/net461/_._",
-        "lib/netstandard2.0/_._",
-        "runtimes/browser-wasm/nativeassets/net6.0/e_sqlite3.a",
-        "runtimes/browser-wasm/nativeassets/net7.0/e_sqlite3.a",
-        "runtimes/browser-wasm/nativeassets/net8.0/e_sqlite3.a",
-        "runtimes/linux-arm/native/libe_sqlite3.so",
-        "runtimes/linux-arm64/native/libe_sqlite3.so",
-        "runtimes/linux-armel/native/libe_sqlite3.so",
-        "runtimes/linux-mips64/native/libe_sqlite3.so",
-        "runtimes/linux-musl-arm/native/libe_sqlite3.so",
-        "runtimes/linux-musl-arm64/native/libe_sqlite3.so",
-        "runtimes/linux-musl-x64/native/libe_sqlite3.so",
-        "runtimes/linux-ppc64le/native/libe_sqlite3.so",
-        "runtimes/linux-s390x/native/libe_sqlite3.so",
-        "runtimes/linux-x64/native/libe_sqlite3.so",
-        "runtimes/linux-x86/native/libe_sqlite3.so",
-        "runtimes/maccatalyst-arm64/native/libe_sqlite3.dylib",
-        "runtimes/maccatalyst-x64/native/libe_sqlite3.dylib",
-        "runtimes/osx-arm64/native/libe_sqlite3.dylib",
-        "runtimes/osx-x64/native/libe_sqlite3.dylib",
-        "runtimes/win-arm/native/e_sqlite3.dll",
-        "runtimes/win-arm64/native/e_sqlite3.dll",
-        "runtimes/win-x64/native/e_sqlite3.dll",
-        "runtimes/win-x86/native/e_sqlite3.dll",
-        "runtimes/win10-arm/nativeassets/uap10.0/e_sqlite3.dll",
-        "runtimes/win10-arm64/nativeassets/uap10.0/e_sqlite3.dll",
-        "runtimes/win10-x64/nativeassets/uap10.0/e_sqlite3.dll",
-        "runtimes/win10-x86/nativeassets/uap10.0/e_sqlite3.dll",
-        "sqlitepclraw.lib.e_sqlite3.2.1.6.nupkg.sha512",
-        "sqlitepclraw.lib.e_sqlite3.nuspec"
-      ]
-    },
-    "SQLitePCLRaw.provider.e_sqlite3/2.1.6": {
-      "sha512": "PQ2Oq3yepLY4P7ll145P3xtx2bX8xF4PzaKPRpw9jZlKvfe4LE/saAV82inND9usn1XRpmxXk7Lal3MTI+6CNg==",
-      "type": "package",
-      "path": "sqlitepclraw.provider.e_sqlite3/2.1.6",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net6.0-windows7.0/SQLitePCLRaw.provider.e_sqlite3.dll",
-        "lib/net6.0/SQLitePCLRaw.provider.e_sqlite3.dll",
-        "lib/netstandard2.0/SQLitePCLRaw.provider.e_sqlite3.dll",
-        "sqlitepclraw.provider.e_sqlite3.2.1.6.nupkg.sha512",
-        "sqlitepclraw.provider.e_sqlite3.nuspec"
-      ]
-    },
     "System.Diagnostics.DiagnosticSource/8.0.0": {
       "sha512": "c9xLpVz6PL9lp/djOWtk5KPDZq3cSYpmXoJQY524EOtuFl5z9ZtsotpsyrDW40U1DRnQSYvcPKEUV0X//u6gkQ==",
       "type": "package",
@@ -3826,14 +3662,13 @@
         "wpfanimatedgif.nuspec"
       ]
     },
-    "YamlDotNet/16.0.0": {
-      "sha512": "kZ4jR5ltFhnjaUqK9x81zXRIUTH4PTXTTEmJDNQdkDLQhcv+2Nl19r0dCSvPW1mstOYBfXTnjdieRbUO6gHMDw==",
+    "YamlDotNet/16.3.0": {
+      "sha512": "SgMOdxbz8X65z8hraIs6hOEdnkH6hESTAIUa7viEngHOYaH+6q5XJmwr1+yb9vJpNQ19hCQY69xbFsLtXpobQA==",
       "type": "package",
-      "path": "yamldotnet/16.0.0",
+      "path": "yamldotnet/16.3.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "LICENSE.txt",
         "README.md",
         "images/yamldotnet.png",
         "lib/net47/YamlDotNet.dll",
@@ -3846,14 +3681,14 @@
         "lib/netstandard2.0/YamlDotNet.xml",
         "lib/netstandard2.1/YamlDotNet.dll",
         "lib/netstandard2.1/YamlDotNet.xml",
-        "yamldotnet.16.0.0.nupkg.sha512",
+        "yamldotnet.16.3.0.nupkg.sha512",
         "yamldotnet.nuspec"
       ]
     }
   },
   "projectFileDependencyGroups": {
     "net8.0-windows10.0.17763": [
-      "ClassIsland.PluginSdk >= 1.5.0.*"
+      "ClassIsland.PluginSdk >= 1.6.0.5"
     ]
   },
   "packageFolders": {
@@ -3910,7 +3745,7 @@
           "ClassIsland.PluginSdk": {
             "include": "Compile, Build, ContentFiles, Analyzers, BuildTransitive",
             "target": "Package",
-            "version": "[1.5.0.*, )"
+            "version": "[1.6.0.5, )"
           }
         },
         "imports": [

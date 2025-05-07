@@ -54,7 +54,7 @@
             "ClassIsland.PluginSdk": {
               "include": "Compile, Build, ContentFiles, Analyzers, BuildTransitive",
               "target": "Package",
-              "version": "[1.5.0.*, )"
+              "version": "[1.6.0.5, )"
             }
           },
           "imports": [
