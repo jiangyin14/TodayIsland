@@ -1,16 +1,15 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net8.0-windows10.0.17763.0</TargetFramework>
+        <TargetFramework>net8.0</TargetFramework>
         <Nullable>enable</Nullable>
-        <UseWPF>true</UseWPF>
         <ImplicitUsings>enable</ImplicitUsings>
         <PlatformTarget>x64</PlatformTarget>
         <EnableDynamicLoading>True</EnableDynamicLoading>
     </PropertyGroup>
 
     <PropertyGroup>
-        <ClassIslandPluginSdkVersion>1.6.0.5</ClassIslandPluginSdkVersion>
+        <ClassIslandPluginSdkVersion>2.0.0.2</ClassIslandPluginSdkVersion>
     </PropertyGroup>
 
     <ItemGroup>
@@ -28,11 +27,4 @@
         </None>
     </ItemGroup>
 
-    <ItemGroup>
-      <Page Update="NextHolidayDateEasier.xaml">
-        <Generator>MSBuild:Compile</Generator>
-        <XamlRuntime>Wpf</XamlRuntime>
-        <SubType>Designer</SubType>
-      </Page>
-    </ItemGroup>
 </Project>

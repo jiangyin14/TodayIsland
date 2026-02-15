@@ -1,27 +1,27 @@
-﻿using ClassIsland.Core;
+using System;
+using Avalonia.Threading;
+using ClassIsland.Core;
 using ClassIsland.Core.Abstractions.Controls;
 using ClassIsland.Core.Attributes;
-using MaterialDesignThemes.Wpf;
 
 namespace TodayIsland;
 
 [ComponentInfo(
-    "DDE5835B-C736-B6D2-CBE8-D478F8F327D3",
-    "本周奇偶",
-    PackIconKind.CalendarOutline,
-    "在主界面显示本周在学期中的奇偶。"
+    "F96923F9-9E30-A755-9AD3-6A0D7205A671",
+    "今日周数",
+    "fluent(\uE2BD)",
+    "在主界面显示本周在学期中的周数。"
 )]
-public partial class WeekOddTodayControl : ComponentBase
+public partial class WeekNumberTodayControl : ComponentBase
 {
-    public WeekOddTodayControl()
+    public WeekNumberTodayControl()
     {
         InitializeComponent();
-        LoadWeekOddTodayAsync();
+        LoadWeekNumberTodayAsync();
     }
 
-    private async void LoadWeekOddTodayAsync()
+    private async void LoadWeekNumberTodayAsync()
     {
-        
         // <summary>
         // 获取本周在学期中的周数
         // </summary> 
@@ -46,14 +46,14 @@ public partial class WeekOddTodayControl : ComponentBase
         var timeSpan = lastSunday - startMonday;
         // 返回总周数
         var calcResult = (Convert.ToInt32(timeSpan.Days + 1) / 7).ToString();
+        var weekNumberMixedResult = "第" + calcResult + "周";
+        Dispatcher.UIThread.InvokeAsync(() => WeekNumberToday.Text = weekNumberMixedResult);
         
         // <summary>
-        // 获取本周在学期中的奇偶
-        // </summary> 
+        // 获取本周单双性
+        // </summary>
         
-        var weekNumber = Convert.ToInt32(calcResult);
-        var weekOddToday = weekNumber % 2 == 0 ? "双周" : "单周";
-        Dispatcher.Invoke(() => WeekOddToday.Text = weekOddToday);
+        
         
         
         
